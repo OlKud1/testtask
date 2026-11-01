@@ -1,0 +1,17 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_DB: parcel
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      PGDATA: /data/postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - db:/data/postgres
+
+volumes:
+  db: { }
